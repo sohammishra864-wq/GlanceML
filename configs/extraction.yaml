@@ -1,0 +1,66 @@
+# Extraction pipeline configuration
+
+# Color extraction
+color:
+  kmeans_clusters: 5  # Number of dominant colors to extract per garment
+  color_space: "CIELAB"
+  distance_metric: "CIEDE2000"
+  palette: "extended_fashion"  # See utils/color_palette.py
+
+# Scene classification
+scene:
+  classes:
+    - office
+    - home_interior
+    - outdoor_urban
+    - outdoor_nature
+    - studio_runway
+
+  # Prompt templates for zero-shot classification
+  prompt_templates:
+    office:
+      - "a photo in an office"
+      - "a photo in a modern office"
+      - "a photo in a corporate office"
+      - "a photo in a cubicle workspace"
+    home_interior:
+      - "a photo at home"
+      - "a photo in a house interior"
+      - "a photo in a living room"
+      - "a photo in a bedroom"
+    outdoor_urban:
+      - "a photo in a city"
+      - "a photo on a city street"
+      - "a photo in an urban area"
+      - "a photo in a downtown area"
+    outdoor_nature:
+      - "a photo in nature"
+      - "a photo in a park"
+      - "a photo outdoors"
+      - "a photo in a natural setting"
+    studio_runway:
+      - "a fashion runway photo"
+      - "a model on a catwalk"
+      - "a photo from a fashion show"
+      - "a studio fashion photoshoot"
+
+# Style inference (rule-based from garment categories)
+style:
+  formal_categories:
+    - blazer
+    - suit
+    - tie
+    - dress_shirt
+    - dress_shoe
+    - formal_dress
+
+  casual_categories:
+    - t-shirt
+    - jeans
+    - sneaker
+    - hoodie
+    - shorts
+    - sandal
+
+  # Threshold: formal_count / total_count
+  formal_threshold: 0.5

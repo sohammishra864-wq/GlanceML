@@ -1,0 +1,12 @@
+# Model configuration
+backbone:
+  name: "Marqo/marqo-fashionSigLIP"
+  device: "auto"  # auto, cuda, cpu
+  batch_size: 32
+
+# FAISS index settings
+faiss:
+  index_type: "HNSW"
+  hnsw_m: 32
+  hnsw_ef_construction: 200
+  hnsw_ef_search: 100

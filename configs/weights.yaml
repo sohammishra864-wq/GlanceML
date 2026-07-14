@@ -1,0 +1,10 @@
+# Scoring weights for linear reranker
+# score = w1*cosine_sim + w2*pair_match_count + w3*scene_match + w4*style_match
+
+weights:
+  cosine_sim: 1.0        # Embedding similarity (always present)
+  pair_match_count: 0.5  # Bound garment:color pairs matched
+  scene_match: 0.3       # Scene class match (bool)
+  style_match: 0.2       # Style match (bool)
+
+# Note: These are initial defaults. Tune against evaluation harness in Step 6.
