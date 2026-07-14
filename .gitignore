@@ -1,0 +1,30 @@
+# Virtual Environment
+.venv/
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Models & Data
+data/raw/
+outputs/
+*.faiss
+*.index
+*.db
+*.sqlite
+*.sqlite3
+
+# Logs
+*.log
+
+# VS Code
+.vscode/
+
+# OS
+.DS_Store
+Thumbs.db
